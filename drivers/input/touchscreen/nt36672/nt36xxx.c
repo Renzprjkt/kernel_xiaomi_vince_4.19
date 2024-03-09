@@ -1296,7 +1296,7 @@ static int32_t nvt_ts_probe(struct i2c_client *client, const struct i2c_device_i
 	for (retry = 0; retry < (sizeof(gesture_key_array) / sizeof(gesture_key_array[0])); retry++) {
 		input_set_capability(ts->input_dev, EV_KEY, gesture_key_array[retry]);
 	}
-	wakeup_source_register(&gesture_wakelock, "poll-wake-lock");
+	wakeup_source_init(&gesture_wakelock, "poll-wake-lock");
 	ts->input_dev->event = NVT_gesture_switch;
 
 #endif
