@@ -10,8 +10,6 @@ fwabs := $(addprefix $(srctree)/,$(filter-out /%,$(fwdir)))$(filter /%,$(fwdir))
 
 fw-external-y := $(subst $(quote),,$(CONFIG_EXTRA_FIRMWARE))
 
-fw-shipped-$(CONFIG_TOUCHSCREEN_TD4310_E7) += synaptics/startup_fw_update.img
-fw-shipped-$(CONFIG_TOUCHSCREEN_TD4310_LANSI_E7) += synaptics/startup_fw_update_lansi.im
 fw-shipped-all := $(fw-shipped-y) $(fw-shipped-m) $(fw-shipped-)
 
 quiet_cmd_ihex  = IHEX    $@
